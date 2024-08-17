@@ -3,7 +3,8 @@ name: lint
 on:
   pull_request: # PR 触发
     branches:
-      - next
+      - main
+  workflow_dispatch: # 手动触发
 
 jobs:
   lint:
