@@ -1,10 +1,10 @@
+
 # 在主分支上构建
 name: build
 on:
   push: # push 触发
     branches:
-      - main
-  workflow_dispatch: # 手动触发
+      - next
 
 jobs:
   # ========================= 准备项目 ========================= 
@@ -44,7 +44,6 @@ jobs:
         fi
         # 获取版本号
         echo VERSION=$(node -p "require('./package.json').version") >> $GITHUB_OUTPUT
-
   # ========================= 构建 Web 版本 ========================= 
   build-pages:
     name: 构建 Github Pages 版本
@@ -166,4 +165,3 @@ jobs:
         draft: false
         prerelease: false
         token: ${{ secrets.ACCESS_TOKEN }}
-          
