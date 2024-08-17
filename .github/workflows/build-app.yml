@@ -4,7 +4,7 @@ name: build
 on:
   push: # push 触发
     branches:
-      - next
+      - main
 
 jobs:
   # ========================= 准备项目 ========================= 
